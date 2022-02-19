@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
 function Square(props) {
+  const [value, setValue] = useState(null);
   return (
-    <button className="square" onClick={() => alert("click")}>
-      {props.value}
+    <button className="square" onClick={() => setValue("X")}>
+      {value}
     </button>
   );
 }
 
 function Board() {
+  const [squares, setSquares] = Array(9).fill(null);
   function renderSquare(i) {
     return <Square value={i} />; //passing props from parent (Board) to the child (Square)
   }
