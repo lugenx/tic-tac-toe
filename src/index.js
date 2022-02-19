@@ -12,9 +12,9 @@ function Square(props) {
 }
 
 function Board() {
-  const [squares, setSquares] = Array(9).fill(null);
+  const [squares, setSquares] = useState(Array(9).fill(null));
   function renderSquare(i) {
-    return <Square value={i} />; //passing props from parent (Board) to the child (Square)
+    return <Square value={squares[i]} />; //passing props from parent (Board) to the child (Square)
   }
 
   const status = "Next player: X";
